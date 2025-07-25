@@ -1,10 +1,10 @@
 import { IsString, MinLength } from 'class-validator';
 
 export class CreateUserDto {
-  @IsString()
+  @IsString({ message: 'Имя пользователя должно быть строкой' })
   username: string;
 
-  @IsString()
-  @MinLength(3, { message: 'password must be more 3 symbols' })
+  @IsString({ message: 'Пароль должен быть строкой' })
+  @MinLength(3, { message: 'Пароль должен содержать минимум 3 символа' })
   password: string;
 }
